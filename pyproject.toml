@@ -1,0 +1,90 @@
+[tool.poetry]
+name = "htmx-examples-with-starlette"
+version = "0.1.0"
+description = "HTMX examples from the official website implemented using Starlette."
+authors = ["Hasan Sezer Taşan <hasansezertasan@gmail.com>"]
+maintainers = ["Hasan Sezer Taşan <hasansezertasan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <4.0"
+asgi-htmx = "^0.1.0"
+fastapi = {extras = ["all"], version = ">=0.100.0"}
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.27.1"
+djlint = "^1.34.1"
+ruff = "^0.2.0"
+pre-commit = ">=2.20.0, <4.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+
+[tool.ruff]
+# Run `ruff linter` command to see all available linters and their descriptions
+# Exclude a variety of commonly ignored directories.
+exclude = ["alembic", "migrations"]
+target-version = "py38"
+line-length = 120
+show-fixes = true
+fix = true
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+ignore-init-module-imports = true
+select = [
+  "E4",
+  "E7",
+  "E9",
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "W",  # pycodestyle warnings
+  "I",  # isort
+  "B9",
+  "B",  # flake8-bugbear
+  "C",  # flake8-comprehensions
+  "UP", # pyupgrade
+]
+ignore = [
+  "B008", # do not perform function calls in argument defaults
+  "C901", # too complex
+  "E501", # line too long, handled by black
+  "F401", # imported but unused
+  "E402", # module level import not at top of file
+  "E712", # comparison to True should be 'if cond is True:' or 'if cond:'
+  "F821", # undefined name
+  "W191", # indentation contains tabs
+  "E101", # indentation contains mixed spaces and tabs
+  "C408", # Unnecessary list comprehension - rewrite as a for loop
+]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.djlint]
+profile="jinja"
+format_css=true
+format_js=true
+extension=".html"
+ignore="H016,H023,H030,H031"
+blank_line_after_tag="load,extends,include,block,endblock"
+blank_line_before_tag="load,extends,include,block,endblock"
+
+[tool.poe.tasks]
+run = "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
