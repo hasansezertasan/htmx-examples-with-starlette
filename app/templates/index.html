@@ -1,14 +1,8 @@
 {% extends "base.html" %}
-
 {% block header %}
-
     <title>Homepage</title>
-
 {% endblock header %}
-
 {% block content %}
-
     {% if error is defined %}<div class="alert alert-danger" role="alert">{{ error }}</div>{% endif %}
     <h1 class="text-danger mb-3">Homepage</h1>
-
 {% endblock content %}

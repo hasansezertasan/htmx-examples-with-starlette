@@ -1,13 +1,8 @@
 {% extends "base.html" %}
-
 {% block header %}
-
     <title>Random Number - hx-swap</title>
-
 {% endblock header %}
-
 {% block content %}
-
     <h1>Random Number - hx-swap</h1>
     <h2>Change inner HTML</h2>
     <p>Replace the content of the target element with the new content.</p>
@@ -38,11 +33,7 @@
                 hx-target="#random-list-beforebegin"
                 hx-swap="beforebegin">Before Begin</button>
         <!-- This part is replaced by the new content -->
-        <div id="random-list-beforebegin">
-
-            {% include "partials/number.html" %}
-
-        </div>
+        <div id="random-list-beforebegin">{% include "partials/number.html" %}</div>
     </div>
     <h2>After Begin</h2>
     <p>Adds new content to the starting point inside the target element.</p>
@@ -54,9 +45,7 @@
                 hx-swap="afterbegin">After Begin</button>
         <div id="random-list-afterbegin">
             <!-- This part is replaced by the new content -->
-
             {% include "partials/number.html" %}
-
         </div>
     </div>
     <h2>Before End</h2>
@@ -68,9 +57,7 @@
                 hx-target="#random-list-beforeend"
                 hx-swap="beforeend">Before End</button>
         <div id="random-list-beforeend">
-
             {% include "partials/number.html" %}
-
             <!-- This part is replaced by the new content -->
         </div>
     </div>
@@ -82,12 +69,7 @@
                 hx-get="{{ url_for("random-number") }}"
                 hx-target="#random-list-afterend"
                 hx-swap="afterend">After End</button>
-        <div id="random-list-afterend">
-
-            {% include "partials/number.html" %}
-
-        </div>
+        <div id="random-list-afterend">{% include "partials/number.html" %}</div>
         <!-- This part is replaced by the new content -->
     </div>
-
 {% endblock content %}

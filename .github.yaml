@@ -1,0 +1,13 @@
+# This file doesn't configure anything, it's only for documentation purposes.
+github:
+  - description: HTMX examples from the official website implemented using Starlette.
+  - website:
+  - topics:
+    - web-application
+     - tutorial
+     - examples
+     - guide
+     - starlette
+     - fastapi
+     - used-htmx
+  - include-on-home-page:
