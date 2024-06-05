@@ -35,6 +35,21 @@ copy-vendor:
 	@echo "Copying HTMX..."
 	mkdir -p $(TARGET_BASE_PATH)/htmx
 	cp -a $(SOURCE_BASE_PATH)/htmx.org/dist/. $(TARGET_BASE_PATH)/htmx
+	@echo "Copying hx-take..."
+	mkdir -p $(TARGET_BASE_PATH)/hx-take
+	cp -a $(SOURCE_BASE_PATH)/hx-take/dist/. $(TARGET_BASE_PATH)/hx-take
+	@echo "Copying hyperscript..."
+	mkdir -p $(TARGET_BASE_PATH)/hyperscript
+	cp -a $(SOURCE_BASE_PATH)/hyperscript.org/dist/. $(TARGET_BASE_PATH)/hyperscript
+	@echo "Copying sortablejs..."
+	mkdir -p $(TARGET_BASE_PATH)/sortablejs
+	cp -a $(SOURCE_BASE_PATH)/sortablejs/. $(TARGET_BASE_PATH)/sortablejs
+	@echo "Copying sweetalert..."
+	mkdir -p $(TARGET_BASE_PATH)/sweetalert
+	cp -a $(SOURCE_BASE_PATH)/sweetalert/dist/. $(TARGET_BASE_PATH)/sweetalert
+	@echo "Copying uikit..."
+	mkdir -p $(TARGET_BASE_PATH)/uikit
+	cp -a $(SOURCE_BASE_PATH)/uikit/dist/. $(TARGET_BASE_PATH)/uikit
 
 .PHONY: delete-vendor
 delete-vendor:
