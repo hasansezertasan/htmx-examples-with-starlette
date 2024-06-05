@@ -32,6 +32,7 @@ updates:
       prefix: ⬆
     assignees:
       - "hasansezertasan"
-    groups:npm-packages:
+    groups:
+      npm-packages:
         patterns:
           - "*"
