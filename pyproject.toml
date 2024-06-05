@@ -12,7 +12,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = ">=3.8, <4.0"
 asgi-htmx = "^0.1.0"
-fastapi = { extras = ["all"], version = ">=0.111.0" }
+starlette = {extras = ["full"], version = "0.37.2"}
 jinja-partials = "0.2.1"
 
 [tool.poetry.group.dev.dependencies]
