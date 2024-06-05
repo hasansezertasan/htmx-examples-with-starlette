@@ -1,0 +1,14 @@
+{
+  "name": "htmx-examples-with-starlette",
+  "version": "0.13.2",
+  "description": "HTMX examples from the official website implemented using Starlette.",
+  "license": "MIT",
+  "author": {
+    "name": "Hasan Sezer Taşan",
+    "url": "https://github.com/hasansezertasan"
+  },
+  "dependencies": {
+    "htmx.org": "1.9.12",
+    "hx-take": "0.3.1"
+  }
+}
