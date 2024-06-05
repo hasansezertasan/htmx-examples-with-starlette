@@ -58,20 +58,3 @@ extension = ".html"
 skip = 'node_modules,./app/static/vendor,poetry.lock'
 ignore-words-list = "statics"
 count = true
-
-[tool.poe.tasks]
-# Linting and formatting tasks.
-mypy = "mypy ."
-ruff-lint = "ruff check ."
-ruff-format = "ruff format ."
-djlint-lint = "djlint --lint ."
-djlint-format = "djlint --reformat ."
-codespell = "codespell ."
-lint = ["ruff-lint", "djlint-lint", "codespell"]
-format = ["ruff-format", "djlint-format"]
-# Analyzing tasks.
-line-count = "pygount --format=summary --folders-to-skip=vendor ."
-# Shortcuts for common tasks.
-run = "uvicorn main:app --port 8000 --reload"
-test = "pytest -v -s"
-clean = "frenchmaid clean"

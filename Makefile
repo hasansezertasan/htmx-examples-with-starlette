@@ -13,6 +13,13 @@ help:
 	@echo "  copy-vendor         Copy vendor files"
 	@echo "  delete-vendor       Delete vendor files"
 	@echo "  delete-node-modules Delete Node Modules"
+	@echo "  lint                Lint the code"
+	@echo "  format              Format the code"
+	@echo "  test                Run tests"
+	@echo "  line-count          Count lines of code"
+	@echo "  clean-cache-files   Clean cache files"
+	@echo "  run                 Run the application"
+
 
 .PHONY: install
 install:
@@ -36,3 +43,30 @@ delete-vendor:
 .PHONY: delete-node-modules
 delete-node-modules:
 	rm -rf node_modules
+
+.PHONY: lint
+lint:
+	ruff check .
+	djlint --lint .
+	codespell .
+
+.PHONY: format
+format:
+	ruff format .
+	djlint --reformat .
+
+.PHONY: test
+test:
+	pytest -v -s tests
+
+.PHONY: line-count
+line-count:
+	pygount --format=summary --folders-to-skip=vendor,node_modules .
+
+.PHONY: clean-cache-files
+clean-cache-files:
+	frenchmaid clean
+
+.PHONY: run
+run:
+	uvicorn main:app --port 8000 --reload
