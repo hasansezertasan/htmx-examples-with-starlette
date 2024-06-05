@@ -1,0 +1,37 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ⬆
+    assignees:
+      - "hasansezertasan"
+    groups:
+      github-action-packages:
+        patterns:
+          - "*"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ⬆
+    assignees:
+      - "hasansezertasan"
+    groups:
+      python-packages:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: ⬆
+    assignees:
+      - "hasansezertasan"
+    groups:npm-packages:
+        patterns:
+          - "*"
