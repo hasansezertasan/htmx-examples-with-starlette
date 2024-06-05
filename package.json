@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "htmx.org": "1.9.12",
-    "hx-take": "0.3.1"
+    "hx-take": "0.3.1",
+    "hyperscript.org": "0.9.12",
+    "sortablejs": "1.15.2",
+    "sweetalert": "2.1.2",
+    "uikit": "3.21.5"
   }
 }
