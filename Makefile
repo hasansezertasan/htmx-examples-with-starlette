@@ -19,7 +19,7 @@ help:
 	@echo "  line-count          Count lines of code"
 	@echo "  clean-cache-files   Clean cache files"
 	@echo "  run                 Run the application"
-	
+
 
 .PHONY: install
 install:
