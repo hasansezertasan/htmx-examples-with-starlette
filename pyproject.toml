@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "htmx-examples-with-starlette"
+version = "0.1.0"
+description = "HTMX examples from the official website implemented using Starlette."
+authors = ["Hasan Sezer Taşan <hasansezertasan@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+maintainers = ["Hasan Sezer Taşan <hasansezertasan@gmail.com>"]
+package-mode = false
+
+
+[tool.poetry.dependencies]
+python = ">=3.8, <4.0"
+asgi-htmx = "^0.1.0"
+fastapi = { extras = ["all"], version = ">=0.111.0" }
+jinja-partials = "0.2.1"
+
+[tool.poetry.group.dev.dependencies]
+djlint = "^1.34.1"
+ruff = "^0.4.7"
+codespell = "^2.3.0"
+pre-commit = ">=2.20.0, <4.0.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+
+[tool.ruff]
+show-fixes = true
+fix = true
+
+[tool.ruff.lint]
+# Run `ruff linter` command to see all available linters and their descriptions
+extend-select = [
+  "CPY", # flake8-copyright
+  "D",
+]
+ignore = [
+  "F401", # `unused-import`
+]
+preview = true
+
+[tool.ruff.lint.flake8-copyright]
+author = "Hasan Sezer Taşan <hasansezertasan@gmail.com>"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.djlint]
+profile = "jinja"
+format_css = true
+format_js = true
+extension = ".html"
+
+[tool.codespell]
+skip = 'node_modules,./app/static/vendor,poetry.lock'
+ignore-words-list = "statics"
+count = true
+
+[tool.poe.tasks]
+# Linting and formatting tasks.
+mypy = "mypy ."
+ruff-lint = "ruff check ."
+ruff-format = "ruff format ."
+djlint-lint = "djlint --lint ."
+djlint-format = "djlint --reformat ."
+codespell = "codespell ."
+lint = ["ruff-lint", "djlint-lint", "codespell"]
+format = ["ruff-format", "djlint-format"]
+# Analyzing tasks.
+line-count = "pygount --format=summary --folders-to-skip=vendor ."
+# Shortcuts for common tasks.
+run = "uvicorn main:app --port 8000 --reload"
+test = "pytest -v -s"
+clean = "frenchmaid clean"
