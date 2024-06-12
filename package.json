@@ -8,6 +8,7 @@
     "url": "https://github.com/hasansezertasan"
   },
   "dependencies": {
+    "@picocss/pico": "2.0.6",
     "htmx.org": "1.9.12",
     "hx-take": "0.3.1",
     "hyperscript.org": "0.9.12",

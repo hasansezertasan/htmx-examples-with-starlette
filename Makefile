@@ -32,6 +32,9 @@ install:
 
 .PHONY: copy-vendor
 copy-vendor:
+	@echo "Copying PicoCSS..."
+	mkdir -p $(TARGET_BASE_PATH)/picocss
+	cp -a $(SOURCE_BASE_PATH)/@picocss/pico/css/. $(TARGET_BASE_PATH)/picocss
 	@echo "Copying HTMX..."
 	mkdir -p $(TARGET_BASE_PATH)/htmx
 	cp -a $(SOURCE_BASE_PATH)/htmx.org/dist/. $(TARGET_BASE_PATH)/htmx
