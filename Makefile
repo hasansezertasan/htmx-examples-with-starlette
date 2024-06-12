@@ -44,9 +44,9 @@ copy-vendor:
 	@echo "Copying sortablejs..."
 	mkdir -p $(TARGET_BASE_PATH)/sortablejs
 	cp -a $(SOURCE_BASE_PATH)/sortablejs/. $(TARGET_BASE_PATH)/sortablejs
-	@echo "Copying sweetalert..."
-	mkdir -p $(TARGET_BASE_PATH)/sweetalert
-	cp -a $(SOURCE_BASE_PATH)/sweetalert/dist/. $(TARGET_BASE_PATH)/sweetalert
+	@echo "Copying sweetalert2..."
+	mkdir -p $(TARGET_BASE_PATH)/sweetalert2
+	cp -a $(SOURCE_BASE_PATH)/sweetalert2/dist/. $(TARGET_BASE_PATH)/sweetalert2
 	@echo "Copying uikit..."
 	mkdir -p $(TARGET_BASE_PATH)/uikit
 	cp -a $(SOURCE_BASE_PATH)/uikit/dist/. $(TARGET_BASE_PATH)/uikit
