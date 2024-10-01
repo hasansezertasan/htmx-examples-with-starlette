@@ -12,8 +12,8 @@
     "htmx.org": "1.9.12",
     "hx-take": "0.3.1",
     "hyperscript.org": "0.9.12",
-    "sortablejs": "1.15.2",
+    "sortablejs": "1.15.3",
     "sweetalert2": "^11.11.1",
-    "uikit": "3.21.5"
+    "uikit": "3.21.13"
   }
 }
